@@ -1,0 +1,88 @@
+<style type="text/css">
+    .myframe{
+
+        margin-top:150px ;
+        width:600px;
+        background-color:#fff;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .root{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        background-color:#dfe6e9;
+    }
+    .gap{
+        margin-top: 20px;
+    }
+
+
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/static/Javascript/Driver.js"></script>
+<script src="/static/Javascript/Bus.js"></script>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bus Reservation</title>
+</head>
+
+<form action="/displaysearchbus">
+
+<body style="background-color:#dfe6e9 ">
+
+<div class="root">
+
+  <div class="myFrame">
+
+      <div class="row" style="display: flex;align-items: center; padding-left:20px; margin-bottom:10px; font-weight:bold;font-size: 14px;letter-spacing: 2px">
+          Please Select Your Source and Destination
+      </div>
+
+     <div class="row gap">
+          <div class="col">
+          <select type="text" class="form-control" id="source" name="source" placeholder="Source" >
+              <option>--Select Source--</option>
+          </select>
+          </div>
+
+           <div class="col">
+          <select type="text" class="form-control" id="destination" name="destination" placeholder="Destination" >
+              <option>--Select Destination--</option>
+          </select>
+           </div>
+      </div>
+
+
+
+      <div class="row gap">
+
+          <div class="col" style="display: flex; align-content: center;justify-content: center;">
+              <button type="submit" class="btn btn-primary w-100">Search Busses</button>
+          </div>
+
+
+      </div>
+
+      <div class="row gap">
+
+          <div class="col" style="display: flex; align-content: center;justify-content: center; font-size:18px;font-weight: bold;">
+              {{ msg }}
+          </div>
+
+      </div>
+
+  </div>
+
+</div>
+</body>
+</form>
+</html>

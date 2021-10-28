@@ -1,0 +1,151 @@
+<style type="text/css">
+    .myframe{
+        margin-top:40px ;
+        width:600px;
+        background-color:#fff;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .root{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        background-color:#dfe6e9;
+    }
+    .gap{
+        margin-top: 20px;
+    }
+
+
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+{#<script src="/static/Javascript/Driver.js"></script>#}
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bus Reservation</title>
+</head>
+
+<form action="/submitbookingrecord">
+
+<input type="hidden" value="{{ row.0 }}" name="bookingid">
+
+<body style="background-color:#dfe6e9 ">
+
+<div class="root">
+
+  <div class="myFrame">
+
+      <div class="row" style="display: flex;align-items: center; padding-left:20px; margin-bottom:10px; font-weight:bold;font-size: 14px;letter-spacing: 2px">
+          <img src="/static/Images/Driver.png" width="40">
+          Booking Details
+      </div>
+
+      <div class="row">
+
+          <div class="col">
+              <input type="text" name="username" class="form-control" placeholder="Full Name">
+          </div>
+
+          <div class="col">
+              <input type="text" name="age" class="form-control" placeholder="Age">
+          </div>
+
+      </div>
+
+      <div class="row gap">
+          <div class="col">
+          <input type="text"  class="form-control" name="email" placeholder="Email" >
+          </div>
+
+          <div class="col">
+              <input type="text" name="mobilenumber" class="form-control" placeholder="Mobile Number">
+          </div>
+
+      </div>
+
+     <div class="row gap">
+         <div class="col">
+              <input type="text"  name="addhar" id="addhar" class="form-control" placeholder="Addhar Card No">
+          </div>
+
+         <div class="col">
+              <input type="text"  name="address" id="address" class="form-control" placeholder="Address">
+          </div>
+
+     </div>
+
+
+     <div class="row gap">
+
+         <div class="col">
+              <input type="text"  name="totalseats" id="totalseats" class="form-control" placeholder="Seats You Want">
+          </div>
+
+          <div class="col" style="display: flex; align-items: center;justify-content: center;" >
+              <input type="radio" value="Male" name="gender" > <i class="fas fa-male" style="margin-right: 20px; margin-left: 10px; font-size: 30px; color: darkviolet" ></i>
+              <input type="radio" value="Female" name="gender" > <i class="fas fa-female" style="margin-right: 20px; margin-left: 10px; font-size: 30px; color: deeppink"></i>
+          </div>
+
+      </div>
+
+      <div class="row gap">
+         <div class="col">
+              <input type="text" readonly="true" value="{{ row.1 }}" name="busnumber" id="busnumber" class="form-control" placeholder="Bus Number">
+          </div>
+
+         <div class="col">
+              <input type="text" readonly="true" value="{{ row.2 }}"  name="source" id="source" class="form-control" placeholder="Source">
+          </div>
+
+     </div>
+
+      <div class="row gap">
+         <div class="col">
+              <input type="text" readonly="true" value="{{ row.3 }}" name="destination" id="destination" class="form-control" placeholder="Destination">
+          </div>
+
+         <div class="col">
+              <input type="text" readonly="true" value="{{ row.4 }}" name="bustype" id="bustype" class="form-control" placeholder="Bus Type">
+          </div>
+
+          <div class="col">
+              <input type="text" readonly="true" value="{{ row.5 }}"  name="busfair" id="busfair" class="form-control" placeholder="Bus Fair">
+          </div>
+
+     </div>
+
+
+     <div class="row gap">
+
+          <div class="col" style="display: flex; align-content: center;justify-content: center;">
+              <button type="submit" class="btn btn-primary w-100">Book Tickets</button>
+          </div>
+
+         <div class="col" style="display: flex; align-content: center;justify-content: center;">
+              <a href="/showmyticket">View Ticket</a>
+          </div>
+
+      </div>
+
+      <div class="row gap">
+
+          <div class="col" style="display: flex; align-content: center;justify-content: center; font-size:18px;font-weight: bold;">
+              {{ msg }}
+          </div>
+
+      </div>
+
+  </div>
+
+</div>
+</body>
+</form>
+</html>

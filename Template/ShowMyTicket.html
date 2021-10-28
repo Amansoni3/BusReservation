@@ -1,0 +1,86 @@
+<style type="text/css">
+    .myframe{
+        margin-top:40px ;
+        width:1000px;
+        background-color:#fff;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .root{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        background-color:#dfe6e9;
+    }
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bus Reservation</title>
+</head>
+
+<body style="background-color: #dfe6e9">
+
+<div class="root">
+
+  <div class="myFrame">
+
+  <div class="row" style="display: flex;align-items: center; padding-left:20px; margin-bottom:10px; font-weight:bold;font-size: 14px;letter-spacing: 2px">
+          <img src="/static/Images/Driverimage.png" width="40">
+          Your Ticket
+      </div>
+
+<table class="table">
+
+{% for row in rows %}
+    <tr>
+        <th>Passenger/Age/Gender</th> <td>{{ row.1 }} <br><b>Age</b> {{ row.2 }}<br> {{ row.8 }}</td>
+    </tr>
+
+    <tr>
+        <th>Contact Info</th><td>{{ row.4}}<br><b>Email:</b>{{ row.3 }}</td>
+    </tr>
+
+      <tr>
+      <th>Addhar</th><td>{{ row.5 }}</td>
+      </tr>
+
+        <tr>
+        <th>Address</th><td>{{ row.6 }}</td>
+        </tr>
+
+           <tr>
+               <th>Total Seats/Bus Types</th><td>{{ row.7 }}<br><b>Bus Type</b>{{ row.12 }}</td>
+           </tr>
+        <tr>
+        <th>Bus Number</th><td>{{ row.9 }}</td>
+        </tr>
+        <tr>
+        <th>Source/Destination</th><td>{{ row.10 }}/{{ row.11 }}</td>
+        </tr>
+
+        <tr>
+        <th>Bus Fair</th><td>{{ row.13 }}</td>
+        </tr>
+         <tr>
+        <th>Total Amount</th><td>{{ row.14 }}</td>
+         </tr>
+{% endfor %}
+
+
+</table>
+  </div>
+</div>
+</body>  </div>
+</div>
+</body>
+</html>

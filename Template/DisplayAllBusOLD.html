@@ -1,0 +1,78 @@
+<style type="text/css">
+    .myframe{
+        margin-top:40px ;
+        width:1000px;
+        background-color:#fff;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .root{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        background-color:#dfe6e9;
+    }
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bus Reservation</title>
+</head>
+
+<body style="background-color: #dfe6e9">
+
+<div class="root">
+
+  <div class="myFrame">
+
+  <div class="row" style="display: flex;align-items: center; padding-left:20px; margin-bottom:10px; font-weight:bold;font-size: 14px;letter-spacing: 2px">
+          <img src="/static/Images/Driverimage.png" width="40">
+          Busses DataBase
+      </div>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th>Bus Id</th>
+      <th>Bus Number</th>
+      <th>Source</th>
+      <th>Destination</th>
+      <th>Bustype</th>
+        <th>Seats</th>
+        <th>Bus Fair</th>
+        <th>Picture</th>
+        <th>Update/Delete Record</th>
+    </tr>
+  </thead>
+{% for row in rows %}
+
+    <tr>
+      <td>{{ row.0 }}</td>
+      <td>{{ row.1 }}</td>
+      <td>{{ row.8 }} </td>
+      <td>{{ row.9 }}</td>
+      <td>{{ row.4 }}</td>
+        <td>{{ row.5 }}</td>
+        <td>{{ row.6 }}</td>
+        <td><img src="/static/BusImages/{{ row.7 }}" width="60" ></td>
+
+      <td><a href="/displaybusbyid?busid={{ row.0 }}">Edit/Delete</a></td>
+    </tr>
+
+
+{% endfor %}
+
+</table>
+  </div>
+</div>
+</body>
+</html>

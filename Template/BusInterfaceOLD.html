@@ -1,0 +1,136 @@
+<style type="text/css">
+    .myframe{
+        margin-top:40px ;
+        width:600px;
+        background-color:#fff;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .root{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        background-color:#dfe6e9;
+    }
+    .gap{
+        margin-top: 20px;
+    }
+
+
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/static/Javascript/Driver.js"></script>
+<script src="/static/Javascript/Bus.js"></script>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bus Reservation</title>
+</head>
+
+<form action="/submitbusrecord" method="post" enctype="multipart/form-data">{% csrf_token %}
+
+<body style="background-color:#dfe6e9 ">
+
+<div class="root">
+
+  <div class="myFrame">
+
+      <div class="row" style="display: flex;align-items: center; padding-left:20px; margin-bottom:10px; font-weight:bold;font-size: 14px;letter-spacing: 2px">
+          <img src="/static/Images/Driver.png" width="40">
+          Bus Details
+      </div>
+
+      <div class="row">
+
+          <div class="col">
+              <input type="text" name="busnumber" class="form-control" placeholder="Bus Number">
+          </div>
+
+          <div class="col">
+              <select type="text" name="bustype" class="form-control" placeholder="Bus Type">
+                  <option>--Bus type--</option>
+                  <option>Air Conditioning</option>
+                  <option>Sleeper</option>
+                  <option>Double Decker</option>
+              </select>
+          </div>
+
+
+      </div>
+
+      <div class="row gap">
+          <div class="col">
+          <select type="text" class="form-control" id="source" name="source" placeholder="Source" >
+              <option>--Select Source--</option>
+          </select>
+          </div>
+
+           <div class="col">
+          <select type="text" class="form-control" id="destination" name="destination" placeholder="Destination" >
+              <option>--Select Destination--</option>
+          </select>
+           </div>
+      </div>
+
+
+
+     <div class="row gap">
+
+         <div class="col">
+              <input name="seats" id="seats" class="form-control" placeholder="Seats">
+          </div>
+
+          <div class="col">
+              <input name="busfair" id="seats" class="form-control" placeholder="Bus Fair">
+          </div>
+
+      </div>
+
+      <div class=" gap">
+        <label for="formGroupExampleInput2">Bus Picture</label>
+        <input type="file" id="picture" accept="image/*" name="picture" class="form-control">
+      </div>
+
+      <div class="row gap">
+
+          <div class="col" style="display:flex; flex-direction: column; align-items: center;">
+              <div style="display: flex;justify-content: center; align-items: center">
+              &nbsp;<img src="/static/Images/Driverimage.png" id="pic" class="img-thumbnail" width="100" height="100"/>
+              </div>
+          </div>
+
+      </div>
+
+      <div class="row gap">
+
+          <div class="col" style="display: flex; align-content: center;justify-content: center;">
+              <button type="submit" class="btn btn-primary w-100">Save</button>
+          </div>
+
+          <div class="col" style="display: flex; align-content: center;justify-content: center">
+              <button type="reset" class="btn btn-danger w-100">Reset</button>
+          </div>
+
+      </div>
+
+      <div class="row gap">
+
+          <div class="col" style="display: flex; align-content: center;justify-content: center; font-size:18px;font-weight: bold;">
+              {{ msg }}
+          </div>
+
+      </div>
+
+  </div>
+
+</div>
+</body>
+</form>
+</html>

@@ -1,0 +1,132 @@
+<style type="text/css">
+    .myframe{
+        margin-top:40px ;
+        width:600px;
+        background-color:#fff;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .root{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        background-color:#dfe6e9;
+    }
+    .gap{
+        margin-top: 20px;
+    }
+
+
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/static/Javascript/Driver.js"></script>
+<script src="/static/Javascript/Bus.js"></script>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bus Reservation</title>
+</head>
+
+<form action="/editdeletebusrecord">
+    <input type="hidden" value="{{ row.0 }}" name="busid">
+
+<body style="background-color:#dfe6e9 ">
+
+<div class="root">
+
+  <div class="myFrame">
+
+      <div class="row" style="display: flex;align-items: center; padding-left:20px; margin-bottom:10px; font-weight:bold;font-size: 14px;letter-spacing: 2px">
+          <img src="/static/Images/Driver.png" width="40">
+          Bus Details
+      </div>
+
+      <div class="row">
+
+          <div class="col">
+              <input type="text" value="{{ row.1 }}" name="busnumber" class="form-control" placeholder="Bus Number">
+          </div>
+
+          <div class="col">
+              <select type="text"  name="bustype" class="form-control" placeholder="Bus Type">
+                  <option>{{ row.4 }}</option>
+                  <option>Air Conditioning</option>
+                  <option>Sleeper</option>
+                  <option>Double Decker</option>
+              </select>
+          </div>
+
+
+      </div>
+
+      <div class="row gap">
+          <div class="col">
+          <select type="text" class="form-control" id="source" name="source" placeholder="Source" >
+              <option value="{{ row.2 }}">{{ row.8 }}</option>
+          </select>
+          </div>
+
+           <div class="col">
+          <select type="text" class="form-control" id="destination" name="destination" placeholder="Destination" >
+              <option value="{{ row.3 }}">{{ row.9 }}</option>
+          </select>
+           </div>
+      </div>
+
+
+
+     <div class="row gap">
+
+         <div class="col">
+              <input name="seats" id="seats" value="{{ row.5 }}" class="form-control" placeholder="Seats">
+          </div>
+
+          <div class="col">
+              <input name="busfair" id="seats" value="{{ row.6 }}" class="form-control" placeholder="Bus Fair">
+          </div>
+
+      </div>
+
+      <div class="row gap">
+
+          <div class="col" style="display:flex; flex-direction: column; align-items: center;">
+              <div style="display: flex;justify-content: center; align-items: center">
+              &nbsp;<img src="/static/BusImages/{{ row.7 }}" id="pic" class="img-thumbnail" width="100" height="100"/>
+              </div>
+          </div>
+
+      </div>
+
+      <div class="row gap">
+
+          <div class="col" style="display: flex; align-content: center;justify-content: center;">
+              <button type="submit" name="button" value="EDIT" class="btn btn-primary w-100">Edit Record</button>
+          </div>
+
+          <div class="col" style="display: flex; align-content: center;justify-content: center">
+              <button type="submit" name="button" value="DELETE" class="btn btn-danger w-100">Delete Record</button>
+          </div>
+
+      </div>
+
+      <div class="row gap">
+
+          <div class="col" style="display: flex; align-content: center;justify-content: center; font-size:18px;font-weight: bold;">
+              {{ msg }}
+          </div>
+
+      </div>
+
+  </div>
+
+</div>
+</body>
+</form>
+</html>
